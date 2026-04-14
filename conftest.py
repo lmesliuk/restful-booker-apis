@@ -4,15 +4,36 @@ import logging
 
 BASE_URL = "https://restful-booker.herokuapp.com"
 
-@pytest.fixture
+'''@pytest.fixture
+# To use only with different base URLs for different environments (e.g., staging, production)
 def base_url():
     return BASE_URL # Return the base URL for the API
+'''
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def auth_token():
     payload = {"username": "admin", "password": "password123"}
     response = requests.post(f"{BASE_URL}/auth", json=payload)
     return response.json()["token"] # Return the authentication token for use in tests
+
+@pytest.fixture(scope="session") # I need to create a booking before running the tests, so I can use its ID in the tests
+def created_booking_id(): # Create a booking and return its ID for use in tests
+    payload = { 
+        "firstname": "Luciana",
+        "lastname": "Mesliuk",
+        "totalprice": 250,
+        "depositpaid": True,
+        "bookingdates": {
+            "checkin": "2025-06-01",
+            "checkout": "2025-06-10"
+        },
+        "additionalneeds": "Breakfast"
+    }
+    # Using BASE_URL constant directly instead of base_url fixture
+    # because session-scoped fixtures cannot depend on function-scoped fixtures
+    response = requests.post(f"{BASE_URL}/booking", json=payload) # Create a new booking
+    return response.json()["bookingid"] # Return the ID of the created booking for use in tests
+
 
 # Set up logging
 logger = logging.getLogger() # Create a logger

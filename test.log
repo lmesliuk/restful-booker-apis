@@ -2,3 +2,15 @@ INFO: GET /booking response: 200 - [{"bookingid":1},{"bookingid":2},{"bookingid"
 INFO: Total bookings: 2813
 INFO: Booking data: {'firstname': 'Jim2', 'lastname': 'Brown2', 'totalprice': 949, 'depositpaid': True, 'bookingdates': {'checkin': '2018-10-28', 'checkout': '2022-10-11'}}
 INFO: Status: 404
+INFO: Status: 200
+INFO: Created booking ID: 2961
+INFO: Status: 200
+INFO: Updated booking ID: None
+INFO: Response text: {"firstname":"Luciana","lastname":"Mesliuk","totalprice":500,"depositpaid":false,"bookingdates":{"checkin":"2025-06-01","checkout":"2025-06-10"},"additionalneeds":"Breakfast"}
+INFO: Status: 200
+INFO: Updated booking: {'firstname': 'Luciana', 'lastname': 'Mesliuk', 'totalprice': 500, 'depositpaid': False, 'bookingdates': {'checkin': '2025-06-01', 'checkout': '2025-06-10'}, 'additionalneeds': 'Breakfast'}
+INFO: Response text: {"firstname":"Luciana","lastname":"Mesliuk","totalprice":500,"depositpaid":false,"bookingdates":{"checkin":"2025-06-01","checkout":"2025-06-10"},"additionalneeds":"Breakfast"}
+INFO: Status: 200
+INFO: Updated booking: {'firstname': 'Luciana', 'lastname': 'Mesliuk', 'totalprice': 500, 'depositpaid': False, 'bookingdates': {'checkin': '2025-06-01', 'checkout': '2025-06-10'}, 'additionalneeds': 'Breakfast'}
+INFO: Response text: {"firstname":"Luciana","lastname":"Mesliuk","totalprice":500,"depositpaid":false,"bookingdates":{"checkin":"2025-06-01","checkout":"2025-06-10"},"additionalneeds":"Breakfast"}
+INFO: Response: Created
